@@ -3,271 +3,108 @@
 	<body>
 		<h1> Multimodal Contrastive Learning with Complex Relational Consistency for Multimedia Retrieval Tasks </h1>
 
+		<!-- Audio retrieval -->
 		<h2> 1. Audio retrieval by lyrics query </h2>
-		<p> 1.1 text: <i>别喝太多。</i></p>
-		<p> <i> Don't drink too much.</i></p>
+		<h3> 1.1 lyric query: </h3>
+		<p><i> My back door some day / Sun going to shine my back door some day / Oh the wind gonna rise and / Blow my blues away </i></p>
 		<table width="80%">
-		baseline
+		<tr> <td> Baseline (Rank1 - Rank4) </td> </tr>
 		<tr>
-			<td> <audio controls="controls"> <source src="candidate_01.mp3"> </audio></td>
-			<td> <audio controls="controls"> <source src="candidate_02.wav"> </audio></td>
-			<td> <audio controls="controls"> <source src="candidate_03.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_no_q1_c1.mp3"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_no_q1_c2.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_no_q1_c3.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_no_q1_c4.wav"> </audio></td>
 		</tr>
-		ours
+		<tr> <td> Ours(- Drc) (Rank1 - Rank4) </td> </tr>
 		<tr>
-			<td> <audio controls="controls"> <source src="candidate_01.mp3"> </audio></td>
-			<td> <audio controls="controls"> <source src="candidate_02.wav"> </audio></td>
-			<td> <audio controls="controls"> <source src="candidate_03.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_dl_q1_c1.mp3"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_dl_q1_c2.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_dl_q1_c3.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_dl_q1_c4.wav"> </audio></td>
 		</tr>
-	 	</table>
-		<p>1.2 text: <i>季浅言，你过分了！</i></p>
-		<p>   <i>Qianyan Ji, you are out of the line!</i></p>
-		<table width="60%">
-		 <tr>
-			<td>baseline:</td>
-			<td> <audio controls="controls">
-			<source src="1_b_2.wav" type="audio/wav">
-		</audio></td>
-			<td>Ours:</td>
-			<td> <audio controls="controls">
-			<source src="1_o_2.wav" type="audio/wav">
-		</audio></td>
-		</tr>
-		</table>
-		
-		 <p>1.3 text: <i>等我一下！</i></p>
-		<p>   <i>Wait me for a moment!</i></p>
-		<table width="60%">
-		 <tr>
-			<td>baseline:</td>
-			<td> <audio controls="controls">
-			<source src="1_b_6.wav" type="audio/wav">
-		</audio></td>
-			<td>Ours:</td>
-			<td> <audio controls="controls">
-			<source src="1_o_6.wav" type="audio/wav">
-		</audio></td>
-		</tr>
-		</table>
-		
-		<p>1.4 text:<i>姨妈这个人就是刀子嘴豆腐心。</i></p>
-		<p>   <i>Auntie's bark is worse than her bite.</i></p>
-		<table width="60%">
-		 <tr>
-			<td>baseline:</td>
-			<td> <audio controls="controls">
-			<source src="1_b_4.wav" type="audio/wav">
-		</audio></td>
-			<td>Ours:</td>
-			<td> <audio controls="controls">
-			<source src="1_o_4.wav" type="audio/wav">
-		</audio></td>
-		</tr>
-		</table>
-		<p>1.5 text:<i>因为你喜欢,所以我经常去看看,你喜欢的东西,我从来都没有忘过。</i></p>
-		<p>   <i>Because you like it, so I often go to see.I never forget what you like.</i></p>
-		<table width="60%">
-		 <tr>
-			<td>baseline:</td>
-			<td> <audio controls="controls">
-			<source src="1_b_3.wav" type="audio/wav">
-		</audio></td>
-			<td>Ours:</td>
-			<td> <audio controls="controls">
-			<source src="1_o_3.wav" type="audio/wav">
-		</audio></td>
-		</tr>
-		</table>
- 
-		<h2> 2. Synthesized audio of out-domain dataset </h2>
-		 <p>2.1 text:<i> 一说话就能把人给呛死，几年没见还是这么没脸没皮，也不看看眼下是什么情况。</i></p>
-		<p>   <i>You can kill a man by talking. I haven't seen you for years but you are still so shameless. Why don't you see what's going on?</i></p>
-		<table width="60%">
-		 <tr>
-			<td>baseline:</td>
-			<td> <audio controls="controls">
-			<source src="2_b_1.wav" type="audio/wav">
-		</audio></td>
-		
-			<td>Ours:</td>
-			<td> <audio controls="controls">
-			<source src="2_o_1.wav" type="audio/wav">
-		</audio></td>
-		</tr>
-		</table>
-		<p>2.2 text: <i>你小子是成了钢铁侠呢，还是植了皮的机器人，怎么这么硬？</i></p>
-		<p>   <i>Are you an iron Man, or a robot with human skin? Why are you so grumpy?</i></p>
-		<table width="60%">
-		 <tr>
-			<td>baseline:</td>
-			<td> <audio controls="controls">
-			<source src="2_b_2.wav" type="audio/wav">
-		</audio></td>
-			<td>Ours:</td>
-			<td> <audio controls="controls">
-			<source src="2_o_2.wav" type="audio/wav">
-		</audio></td>
-		</tr>
-		</table>
-		<p>2.3 text: <i>嘿嘿，你猜呢！</i></p>
-		<p>   <i>Hey, hey, guess！</i></p>
-		<table width="60%">
-		 <tr>
-			<td>baseline:</td>
-			<td> <audio controls="controls">
-			<source src="2_b_3.wav" type="audio/wav">
-		</audio></td>
-			<td>Ours:</td>
-			<td> <audio controls="controls">
-			<source src="2_o_3.wav" type="audio/wav">
-		</audio></td>
-		</tr>
-		</table>
-		<p>2.4 text: <i>快来看看这树怎么啦？</i> </p>
-		<p>   <i>Come and check it out. What's wrong with the tree?</i></p>
-		<table width="60%">
-		 <tr>
-			<td>baseline:</td>
-			<td> <audio controls="controls">
-			<source src="2_b_4.wav" type="audio/wav">
-		</audio></td>
-			<td>Ours:</td>
-			<td> <audio controls="controls">
-			<source src="2_o_4.wav" type="audio/wav">
-		</audio></td>
-		</tr>
-		</table>
-		<p>2.5 text: <i>心里难道不会内疚？</i></p>
-		<p>   <i>Don't you feel guilty?</i></p>
-		<table width="60%">
-		 <tr>
-			<td>baseline:</td>
-			<td> <audio controls="controls">
-			<source src="2_b_5.wav" type="audio/wav">
-		</audio></td>
-			<td>Ours:</td>
-			<td> <audio controls="controls">
-			<source src="2_o_5.wav" type="audio/wav">
-		</audio></td>
-		</tr>
-		</table>
-		
-		
-		<h2> 3. Long-form audiobook phrases </h2>
-		<p>1.1 text: <i>叶凡也是出于好奇。“你这小子。一说话就能把人给呛死，几年没见还是这么没脸没皮，也不看看眼下是什么情况。”
-			叶凡给气乐了，当下放弃额头的大包，转而笑骂一声，直接冲对方的胸前来上两拳。
-			“撕嚄！”却疼的自己满嘴咧牙。“你小子是成了钢铁侠呢，还是植了皮的机器人，怎么这么硬？”手晃个不停。“嘿嘿，你猜呢？”庞博挤眉弄眼的，当下咯咯怪笑，难得的一次装牛逼的机会，又是在死党的面前，
-			当然得争取满分。“你呀……”“我只告诉你一个人哦。”</i>
- </p>
-		<table width="60%">
-		<p>   <i>Ye Fan was so curious. 
-			"You can kill a man by talking. I haven't seen you for years but you are still so shameless. Why don't you think about what's going on?" 
-			Ye Fan was so angry that he ignored the big bump on his forehead, turned to laughing and scolding, and punched his opponent in the chest. 
-			"Whew!" But the pain of himself. "Are you an iron Man, or a robot with human skin? 
-			"Hey, hey, guess what?" Pangbo winked and giggled at the moment. 
-			It was a rare opportunity to pretend to brag. It was in front of his best friend, so of course he had to be boastful. "You're the only one I'm telling."</i></p>
+		<tr> <td> Ours(full version) (Rank1 - Rank4) </td> </tr>
 		<tr>
-			<td>baseline:</td>
-			<td> <audio controls="controls">
-			<source src="3_b_1.wav" type="audio/wav">
-		</audio></td>
-			<td>Ours:</td>
-			<td> <audio controls="controls">
-			<source src="3_o_1.wav" type="audio/wav">
-		</audio></td>
+			<td> <audio controls="controls"> <source src="ta_de_q1_c1.mp3"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_de_q1_c2.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_de_q1_c3.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_de_q1_c4.wav"> </audio></td>
 		</tr>
 		</table>
-		
-		<p>1.2 text:<i> “你们说，前辈叫我们过来，是干嘛呢？”“是不是想要也给我们点宝贝？”“不是吧？你当宝贝是大白菜？还能人手一件不成？我看不像，说不定前辈是饿了呢。”“闭嘴...”
-			一群人胆颤心惊的围成一个半圆圈，将李牧堵在里头，并且呆呆的看着他一会皱眉，一会傻乐，一会暗笑的表情，想要说话又不敢直接问。简直不要太煎熬呀！
-			前辈厉害确实是好事。毕竟帮他们消灭了魔头（虽然过程有些曲折）。</i>
-</p>
-		<p>   <i>"Why does the seniors call us here?" "Does he want to give us some treasures?" "Really? Treasures are not cabbages. Can we all have one? I don't think so. Maybe the teacher is hungry."
-			"Shut up..." A group of people tremble into a half circle and Li Mu was blocked in. He sometimes frown,sometimes giggle. 
-			They want to speak and dare not directly ask. It is so painful! It's a good thing the teacher is good.
-			After all, it helped them get rid of the devil (albeit with some twists and turns).</i></p>
-		<table width="60%">
+		<h3> 1.2 lyric query: </h3>
+		<p><i> Thataposs all right now  Mama  anyway you do / Thataposs all right  thataposs all right / Thataposs all right now Mama  anyway you do</i></p>
+		<table width="80%">
+		<tr> <td> Baseline (Rank1 - Rank4) </td> </tr>
 		<tr>
-			<td>baseline:</td>
-			<td> <audio controls="controls">
-			<source src="new_3_b_2.wav" type="audio/wav">
-				</audio></td>
-			<td>Ours:</td>
-			<td> <audio controls="controls">
-			<source src="3_o_2.wav" type="audio/wav">
-		</audio></td>
+			<td> <audio controls="controls"> <source src="ta_no_q2_c1.mp3"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_no_q2_c2.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_no_q2_c3.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_no_q2_c4.wav"> </audio></td>
 		</tr>
-	</table>
+		<tr> <td> Ours(- Drc) (Rank1 - Rank4) </td> </tr>
+		<tr>
+			<td> <audio controls="controls"> <source src="ta_dl_q2_c1.mp3"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_dl_q2_c2.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_dl_q2_c3.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_dl_q2_c4.wav"> </audio></td>
+		</tr>
+		<tr> <td> Ours(full version) (Rank1 - Rank4) </td> </tr>
+		<tr>
+			<td> <audio controls="controls"> <source src="ta_de_q2_c1.mp3"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_de_q2_c2.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_de_q2_c3.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_de_q2_c4.wav"> </audio></td>
+		</tr>
+		</table>
+		<h3> 1.3 lyric query: </h3>
+		<p><i> Low low low / Low out time / Low out time / Low out time / Low out / Low out time / Low out time / Faces shine</i></p>
+		<table width="80%">
+		<tr> <td> Baseline (Rank1 - Rank4) </td> </tr>
+		<tr>
+			<td> <audio controls="controls"> <source src="ta_no_q3_c1.mp3"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_no_q3_c2.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_no_q3_c3.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_no_q3_c4.wav"> </audio></td>
+		</tr>
+		<tr> <td> Ours(- Drc) (Rank1 - Rank4) </td> </tr>
+		<tr>
+			<td> <audio controls="controls"> <source src="ta_dl_q3_c1.mp3"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_dl_q3_c2.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_dl_q3_c3.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_dl_q3_c4.wav"> </audio></td>
+		</tr>
+		<tr> <td> Ours(full version) (Rank1 - Rank4) </td> </tr>
+		<tr>
+			<td> <audio controls="controls"> <source src="ta_de_q3_c1.mp3"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_de_q3_c2.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_de_q3_c3.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_de_q3_c4.wav"> </audio></td>
+		</tr>
+		</table>
+		<h3> 1.4 lyric query: </h3>
+		<p><i> Forrado con un chaleco forrado de mugre / Nunca se baaba por eso no le entraban las balas / La cascara guarda al palo / Bajaron  campesinos de all del cerro escondido / Traiban al ojo de vidrio picado de un corralillo / Venia ya muerto el bandido sobre el caballo tordillo ajua</i></p>
+		<table width="80%">
+		<tr> <td> Baseline (Rank1 - Rank4) </td> </tr>
+		<tr>
+			<td> <audio controls="controls"> <source src="ta_no_q4_c1.mp3"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_no_q4_c2.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_no_q4_c3.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_no_q4_c4.wav"> </audio></td>
+		</tr>
+		<tr> <td> Ours(- Drc) (Rank1 - Rank4) </td> </tr>
+		<tr>
+			<td> <audio controls="controls"> <source src="ta_dl_q4_c1.mp3"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_dl_q4_c2.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_dl_q4_c3.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_dl_q4_c4.wav"> </audio></td>
+		</tr>
+		<tr> <td> Ours(full version) (Rank1 - Rank4) </td> </tr>
+		<tr>
+			<td> <audio controls="controls"> <source src="ta_de_q4_c1.mp3"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_de_q4_c2.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_de_q4_c3.wav"> </audio></td>
+			<td> <audio controls="controls"> <source src="ta_de_q4_c4.wav"> </audio></td>
+		</tr>
+		</table>
 		
-		<h2> 4. Style change by replace style representations </h2>
-		<p>
-			In order to further verify if style embedding capture something independent of content, we extract some style embedding  from strong  emotional  
-			(such  as  happy,  angry)  text  and  apply  them  to another  clam  text  for  TTS.  
-			Comparing  with  its  original  style,  the generated  audio  shows  obvious  style  changes  but  remain  natural.
-		</p>
-		 <p>4.1 We extract style representation from a sentence with obviously angry emotion:"You pretend to be generous, why should I be wronged at home?(你自己装大方，凭什么我要在府里受委屈？)"</p>
-		<p>And apply it to below texts for TTS.</p>
-		<p>4.1.1  text:<i> 看上面怎么说，如果揪着不放，我们干脆也别委屈自己，谋划未来的路吧。</i></p>
-		<p>   <i>Look at what the leader says, if they do not let go, we just do not wrong ourselves, plan the way forward.</i></p>
-		<table width="60%">
-		 <tr>
-			<td>original audio:</td>
-			<td> <audio controls="controls">
-			<source src="4_original_1.wav" type="audio/wav">
-		</audio></td>
-
-			<td>generated audio with changed style embedding:</td>
-			<td> <audio controls="controls">
-			<source src="4_t_1.wav" type="audio/wav">
-		</audio></td>
-		</tr>
-		</table>
-		<p>4.1.2 text: <i>奉先说得对，我们也得吸收经验，不能事事较真。</i></p>
-		<p>   <i>Fengxian is right, we also have to absorb experience, don't be serious to everything.</i></p>
-		<table width="60%">
-		 <tr>
-			<td>original audio:</td>
-			<td> <audio controls="controls">
-			<source src="4_original_2.wav" type="audio/wav">
-		</audio></td>
-			<td>generated audio with changed style embedding:</td>
-			<td> <audio controls="controls">
-			<source src="4_t_2.wav" type="audio/wav">
-		</audio></td>
-		</tr>
-		</table>
-		
-		 <p>4.2 We extract style representation from a sentence with obviously happy emotion:"Hey hey, you can guess?(嘿嘿，你猜呢？)"</p>
-		 <p>And apply it to below texts for TTS.</p>
-		<p>4.1.1  text:<i> 还是让我们不去？</i></p>
-		<p>   <i>Or don't Let's go?</i></p>
-		<table width="60%">
-		 <tr>
-			<td>original audio:</td>
-			<td> <audio controls="controls">
-			<source src="4_original_3.wav" type="audio/wav">
-		</audio></td>
-
-			<td>generated audio with changed style embedding:</td>
-			<td> <audio controls="controls">
-			<source src="4_t_3.wav" type="audio/wav">
-		</audio></td>
-		</tr>
-		</table>
-		<p>4.1.2 text:<i>到底干了啥？</i></p>
-		<p>   <i>What the hell did you do?</i></p>
-		<table width="60%">
-		 <tr>
-			<td>original audio:</td>
-			<td> <audio controls="controls">
-			<source src="4_original_5.wav" type="audio/wav">
-		</audio></td>
-			<td>generated audio with changed style embedding:</td>
-			<td> <audio controls="controls">
-			<source src="4_t_5.wav" type="audio/wav">
-		</audio></td>
-		</tr>
-		</table>
-	
 	</body>
 </html>
